@@ -3,7 +3,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/rushil1904/anomaly-detector)
-![Tests](https://github.com/rushil1904/Anomaly-Detector/actions/workflows/python-tests.yml/badge.svg)
 
 ## Overview
 This implementation provides a real-time anomaly detection system for continuous data streams using robust statistical methods. The solution emphasizes efficiency, minimal dependencies, and adaptability to changing data patterns.
