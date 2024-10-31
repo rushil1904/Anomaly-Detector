@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4    
     
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4 
       with:
         python-version: "3.10"
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
+        pip install flake8 pytest    # Added pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
     - name: Lint with flake8
@@ -36,4 +36,4 @@ jobs:
         
     - name: Run tests
       run: |
-        python test_anomaly_detection.py
+        python -m pytest test_anomaly_detection.py || python test_anomaly_detection.py

@@ -25,6 +25,8 @@ from typing import Tuple, Deque
 import time
 from dataclasses import dataclass
 
+matplotlib.use("Agg")
+
 
 @dataclass
 class DataPoint:
