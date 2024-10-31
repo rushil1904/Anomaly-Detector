@@ -56,9 +56,9 @@ def real_time_example():
             # Generate value (sine wave + noise + occasional spike)
             value = np.sin(2 * np.pi * t / 50) + np.random.normal(0, 0.2)
 
-            # Add occasional spikes
-            if np.random.random() < 0.05:  # 5% chance of spike
-                value += np.random.choice([-3, 3])
+            # Add more frequent and larger spikes
+            if np.random.random() < 0.08:  # Increased to 8% chance
+                value += np.random.choice([-4, 4])  # Increased magnitude
 
             # Detect anomalies
             is_anomaly, score = detector.update(value)
@@ -76,20 +76,14 @@ def real_time_example():
                 anomalies_detected += 1
                 print(f"Anomaly detected! Value: {value:.2f}, Score: {score:.2f}")
 
-            time.sleep(0.05)  # Short pause for visualization
+            time.sleep(0.05)
             t += 1
-
-        # Save final state
-        plt.gcf().set_size_inches(12, 8)
-        plt.tight_layout()
-        plt.savefig("examples/example_detection.png", dpi=300, bbox_inches="tight")
-        print(f"\nFinal visualization saved as 'examples/example_detection.png'")
-        print(f"Total anomalies detected: {anomalies_detected}")
 
     except KeyboardInterrupt:
         print("\nVisualization terminated by user")
     finally:
         plt.close()
+        print(f"\nTotal anomalies detected: {anomalies_detected}")
 
 
 def custom_data_example():
