@@ -48,6 +48,8 @@ This implementation provides a real-time anomaly detection system for continuous
 ### Visualization (Optional)
 - `matplotlib`: Real-time visualization components
 
+![Anomaly Detection Test](anomaly_detection_test.png)
+
 ## Installation
 
 1. Clone the repository:
