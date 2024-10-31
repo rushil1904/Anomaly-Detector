@@ -79,9 +79,10 @@ is_anomaly, score = detector.update(value)
 
 if is_anomaly:
     print(f"Anomaly detected! Score: {score:.2f}")
-
+```
 
 ## Real-time visualization
+```python
 from anomaly_detection import AnomalyDetector, StreamVisualizer, DataPoint
 import time
 
@@ -103,24 +104,27 @@ while True:
     
     visualizer.update(point)
     time.sleep(0.05)  # Control update rate
-
+```
 
 ## Running tests
+```python
 # Run all tests
 python test_anomaly_detection.py
 
 # Run examples
 python examples/simple_detection.py
+```
 
-##Algorithm Details
+## Algorithm Details
 The anomaly detector uses a combination of:
 
-Sliding window statistics
-Exponential Moving Average (EMA)
-Dynamic thresholding
-Robust statistical measures (median, IQR)
-##Contributing
+- Sliding window statistics
+- Exponential Moving Average (EMA)
+- Dynamic thresholding
+- Robust statistical measures (median, IQR)
+
+## Contributing
 Contributions welcome!
 
-##License
+## License
 MIT License
